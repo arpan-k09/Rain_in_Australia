@@ -19,7 +19,7 @@ print(x_pca.shape)
 
 x_train, x_test, y_train, y_test = train_test_split(x_pca,Y,test_size=0.25,random_state=42)
 # rf = RandomForestClassifier(n_estimators=1000,max_features=15)
-lr = LogisticRegression()
+lr = LogisticRegression(max_iter=10000000)
 lr.fit(x_train,y_train)
 print(lr.score(x_test,y_test))
 
