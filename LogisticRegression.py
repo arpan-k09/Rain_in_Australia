@@ -9,7 +9,7 @@ def LR(filename):
     df = pd.read_csv(filename)
     Y = df['RainTomorrow']
     X = df.drop(columns=['RainTomorrow'])
-    x_train,x_test,y_train,y_test = train_test_split(X,Y,random_state=42,train_size=0.25)
+    x_train,x_test,y_train,y_test = train_test_split(X,Y,random_state=42,test_size=0.25)
     lr.fit(x_train,y_train)
     y_pred = lr.predict(x_test)
     tp,tn,fn,fp = confusion_matrix(y_test,y_pred).ravel()
